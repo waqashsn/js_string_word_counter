@@ -1,0 +1,58 @@
+<head></head>
+<body>
+    <div id="original"></div>
+    <div id="message"></div>
+    <div id="arrayed"></div>
+
+
+    <script>
+        let myString = "this is just a string this string is very nice hello";
+        let para = document.createElement("P");
+        let text = document.createTextNode(myString);
+        para.appendChild(text);
+        document.getElementById("original").appendChild(para);
+        
+        function toTwoDimArray(text){
+            let textArray = text.split(" ");
+            //return textArray;
+            //console.log(textArray);
+            console.log(textArray.length);
+            let twoDimArray = [];
+            for(i = 0; i < textArray.length; i++){
+                if(!twoDimArray[i][0].includes("this")){
+                twoDimArray[i] = [textArray[i]];
+                twoDimArray[i][1] = "its count";
+
+                }
+          
+            
+            }
+            return twoDimArray;
+        }
+        
+
+        let recievedArray = toTwoDimArray(myString);
+        console.log(recievedArray);
+        // console.log(recievedArray[0][0]);
+        // console.log(recievedArray[1][0]);
+        // console.log(recievedArray[2][1]);
+        let message = document.createTextNode("Your string contains " + recievedArray.length + " words!")
+        document.getElementById("message").appendChild(message);
+
+
+
+
+        // let stringArrary = [];
+        // stringArray = myString.split(" ");
+        // let message = document.createTextNode("Your string contains " + stringArray.length + " words!");
+        // document.getElementById("message").appendChild(message);
+        // document.write("OUR STRING HAS " + stringArray.length + "ITEMS!");
+        // for (x = 0; x < stringArray.length - 1; x++) {
+        //   document.write(stringArray[x]);
+        //   document.write("<br>");
+        
+        // }
+        
+    </script>
+</body>
+
