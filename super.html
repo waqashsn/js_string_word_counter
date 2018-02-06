@@ -1,52 +1,57 @@
-<head></head>
-<body>
-    <div id="info"></div>
-    <div id="message"></div>
-    <div id="arrayed"></div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>String Analysis</title>
+    </head>
+    <body>
+        <div id="info"></div>
+        <div id="message"></div>
+        <div id="arrayed"></div>
 
 
-    <script>
-        let myString = "hello world hello world hello world hello"; // the target string
-        let para = document.createElement("P"); // create a paragraph
-        let text = document.createTextNode("You text is: " + myString); // create a text node containing the target string
-        para.appendChild(text); // assign the textnode to the paragraph
-        document.getElementById("info").appendChild(para); // add the paragraph to the page in info div
+        <script>
+            let myString = "hello world hello world hello world hello"; // the target string
+            let para = document.createElement("P"); // create a paragraph
+            let text = document.createTextNode("You text is: " + myString); // create a text node containing the target string
+            para.appendChild(text); // assign the textnode to the paragraph
+            document.getElementById("info").appendChild(para); // add the paragraph to the page in info div
 
-        //function to see if a word exists in any row of a two dim array
-        function exists(arr, word){
-            return arr.some(row => row.includes(word));
+            //function to see if a word exists in any row of a two dim array
+            function exists(arr, word){
+                return arr.some(row => row.includes(word));
 
-        }
-
-
-        //function to convert the target string into a two dim array with word count
-        function toTwoDimArray(text){
-            let textArray = text.split(" "); // convert target string into a single dim array
-            console.log(textArray.length); 
-            var twoDimArray = []; //declare a two dim array
-            for(i = 0; i < textArray.length; i++){
-                if(!exists(twoDimArray, textArray[i])){
-                    twoDimArray[i] = [textArray[i]]
-                    twoDimArray[i][1] = 1;
-                }
-                else{
-                    for(x = 0; x < twoDimArray.length; x++){
-                        if(twoDimArray[x][0] == textArray[i])
-                        {
-                            twoDimArray[x][1]++;
-                        }
-                    }
-                }  
-            
             }
-            return twoDimArray;
-        }
-        
-        let recievedArray = toTwoDimArray(myString);
-        console.log(recievedArray);
 
-        let message = document.createTextNode("Your string contains " + recievedArray.length + " total words.")
-        document.getElementById("message").appendChild(message);      
-    </script>
-</body>
 
+            //function to convert the target string into a two dim array with word count
+            function toTwoDimArray(text){
+                let textArray = text.split(" "); // convert target string into a single dim array
+                console.log(textArray.length); 
+                var twoDimArray = []; //declare a two dim array
+                for(i = 0; i < textArray.length; i++){
+                    if(!exists(twoDimArray, textArray[i])){
+                        twoDimArray[i] = [textArray[i]]
+                        twoDimArray[i][1] = 1;
+                    }
+                    else{
+                        for(x = 0; x < twoDimArray.length; x++){
+                            if(twoDimArray[x][0] == textArray[i])
+                            {
+                                twoDimArray[x][1]++;
+                            }
+                        }
+                    }  
+                
+                }
+                return twoDimArray;
+            }
+            
+            let recievedArray = toTwoDimArray(myString);
+            console.log(recievedArray);
+
+            let message = document.createTextNode("Your string contains " + recievedArray.length + " total words.")
+            document.getElementById("message").appendChild(message);      
+        </script>
+    </body>
+</html>
