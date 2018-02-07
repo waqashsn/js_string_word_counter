@@ -4,7 +4,10 @@
   "description": "\"A piece of JavaScript code that when given a string will return the number of times words in that string appear.\"",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress -p",
+    "watch": "webpack --progress --watch",
+        "server": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
