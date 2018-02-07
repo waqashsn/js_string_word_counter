@@ -1,0 +1,22 @@
+{
+  "name": "js_string_analysis",
+  "version": "1.0.0",
+  "description": "\"A piece of JavaScript code that when given a string will return the number of times words in that string appear.\"",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waqashsn/js_string_word_counter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waqashsn/js_string_word_counter/issues"
+  },
+  "homepage": "https://github.com/waqashsn/js_string_word_counter#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
