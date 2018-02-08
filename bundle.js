@@ -65,8 +65,11 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "twoDimArray", function() { return twoDimArray; });
 //function to see if a word exists in any row of a two dim array
 function exists(arr, word){
     return arr.some(row => row.includes(word));
@@ -96,6 +99,8 @@ function toTwoDimArray(text){
     }
     return twoDimArray;
 }
+
+
 
 /***/ })
 /******/ ]);

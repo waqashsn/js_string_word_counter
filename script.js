@@ -27,3 +27,5 @@ function toTwoDimArray(text){
     }
     return twoDimArray;
 }
+
+export {twoDimArray};
